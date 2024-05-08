@@ -4,6 +4,6 @@
  
   tasks:
   - name: Hello World!
-    shell: curl -k "https://{{ url }}/api/v2/postMessage" --header 'Content-Type: application/json' --header "X-Chatops-Source-Id: {{ sourceId }}" --header "X-Chatops-Source-Api-Token: {{ apiToken }}" --header 'X-Transaction-Id: postmessage101' --data-raw '{ "workspaceName": "chatops-dev", "message": {"text":"Posting message on dev - test 16 Nov"},"channelId": "19:58931ed0ccea470a8424f736abf0ad03@thread.tacv2"}'
+    shell: curl --k "https://{{ url }/api/v2/postMessage" --header 'Content-Type: application/json' --header 'X-Chatops-Source-Id: "{{ sourceId }}"' --header 'X-Chatops-Source-Api-Token: "{{ apiToken }}"' --header 'X-Transaction-Id: postmessage101' --data-raw '{ "workspaceName": "chatops-dev", "message": {"text":"Posting message on dev - test 16 Nov"},"channelId": "19:71d6b5cb5679411bb59980e4784d5984@thread.tacv2"}'
     # shell: curl -k "https://{{ url }}/api/v2/postMessage" --header 'Content-Type: application/json' --header "X-Chatops-Source-Id: {{ sourceId }}" --header "X-Chatops-Source-Api-Token: {{ apiToken }}" --header 'X-Transaction-Id: postmessage101' --data-raw '{ "workspaceName": "{{ workspaceName }}", "message": {"text":"Posting message on dev - test 16 Nov"},"channelId": "{{ channelId }}"}'
 
