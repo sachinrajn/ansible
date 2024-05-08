@@ -16,3 +16,4 @@
         X-Chatops-Source-Id: "{{ sourceId }}"
         X-Chatops-Source-Api-Token: "{{ apiToken }}"
         X-Transaction-Id: "postmessage101"
+        dest-id: "chatop"
