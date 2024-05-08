@@ -4,4 +4,5 @@
  
   tasks:
   - name: Hello World!
-    shell: curl --k "https://{{url}}/api/v2/postMessage" --header 'Content-Type: application/json' --header "X-Chatops-Source-Id: {{sourceId}}" --header "X-Chatops-Source-Api-Token: {{apiToken}}" --header 'X-Transaction-Id: postmessage101' --data-raw '{ "workspaceName": "{{workspaceName}}", "message": {"text":"Posting message on dev - test 16 Nov"},"channelId": "{{channelId}}"}'
+    #shell: curl -k "https://{{url}}/api/v2/postMessage" --header 'Content-Type: application/json' --header "X-Chatops-Source-Id: {{sourceId}}" --header "X-Chatops-Source-Api-Token: {{apiToken}}" --header 'X-Transaction-Id: postmessage101' --data-raw '{ "workspaceName": "{{workspaceName}}", "message": {"text":"Posting message on dev - test 16 Nov"},"channelId": "{{channelId}}"}'
+    shell: curl -k "https://{{url}}/ping" 
