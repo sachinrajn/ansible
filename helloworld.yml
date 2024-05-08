@@ -8,7 +8,7 @@
     uri:
       url: https://{{ url }}/api/v2/postMessage
       method: POST
-      body: '{text:"{{ message }}",channelId: "{{ channelId }}"}'
+      body: '{"text":"{{ message }}","channelId": "{{ channelId }}"}'
       body_format: json
       headers:
         Content-Type: "application/json"
