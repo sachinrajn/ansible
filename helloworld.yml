@@ -3,6 +3,6 @@
   hosts: localhost
  
   tasks:
- 
+  - debug: msg="{{ foo }}"
   - name: Hello World!
     shell: curl -k https://test.chatops.kyndryl.net/ping
