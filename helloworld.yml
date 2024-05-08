@@ -3,7 +3,15 @@
   hosts: localhost
  
   tasks:
-  - name: Hello World!
-    shell: curl -k -X POST -H "X-Transaction-Id: postmessage101" -H "Content-Type:application/json" https://"{{ url }}"/ping
-    # shell: curl -k "https://{{ url }}/api/v2/postMessage" --header 'Content-Type: application/json' --header 'X-Chatops-Source-Id: "{{ sourceId }}"' --header 'X-Chatops-Source-Api-Token: "{{ apiToken }}"' --header 'X-Transaction-Id: postmessage101' --data-raw '{ "workspaceName": "'"{{ workspaceName }}"'", "message": {"text":"'"{{ message }}"'"},"channelId": "'"{{ channelId }}"'"}'
-
+  # shell: curl -k "https://{{ url }}/api/v2/postMessage" --header 'Content-Type: application/json' --header 'X-Chatops-Source-Id: "{{ sourceId }}"' --header 'X-Chatops-Source-Api-Token: "{{ apiToken }}"' --header 'X-Transaction-Id: postmessage101' --data-raw '{ "workspaceName": "'"{{ workspaceName }}"'", "message": {"text":"'"{{ message }}"'"},"channelId": "'"{{ channelId }}"'"}'
+  - name: post to chatops
+    uri:
+      url: https://"{{ url }}"/api/v2/postMessage
+      method: POST
+      body: '{"text":"{{ message }}"},"channelId": "{{ channelId }}"}'
+      body_format: json
+      headers:
+        Content-Type: "application/json"
+        X-Chatops-Source-Id: "{{ sourceId }}"
+        X-Chatops-Source-Api-Token: "{{ apiToken }}"
+        X-Transaction-Id: "postmessage101"
