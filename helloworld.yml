@@ -17,8 +17,3 @@
         X-Chatops-Source-Api-Token: "{{ apiToken }}"
         X-Transaction-Id: "postmessage101"
         dest-id: "chatop"
-    register: result
-    
-  - name: Show result
-    debug:
-      msg: {{ result }}
