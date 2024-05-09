@@ -8,7 +8,7 @@
     uri:
       url: https://{{ url }}/api/v2/postMessage
       method: POST
-      body: '{"message":"{{ message }}","channelId": "{{ channelId }}","collabPlatform": "TEAMS","workspaceName": "{{ workspaceName }}"}'
+      body: '{"message":{"text":"{{ message }}"},"channelId": "{{ channelId }}","collabPlatform": "TEAMS","workspaceName": "{{ workspaceName }}"}'
       body_format: json
       headers:
         Content-Type: "application/json"
