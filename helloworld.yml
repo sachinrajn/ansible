@@ -17,3 +17,21 @@
         X-Chatops-Source-Api-Token: "{{ apiToken }}"
         X-Transaction-Id: "postmessage101"
         dest-id: "chatop"
+        
+  - name: Make sure service has time to start or stop
+    pause:
+      seconds: 3
+      
+  - name: post to chatops2
+    uri:
+      url: https://{{ url }}/api/v2/postMessage
+      method: POST
+      body: '{"message":{"text":"{{ message1 }}"},"channelId": "{{ channelId }}","collabPlatform": "TEAMS","workspaceName": "{{ workspaceName }}"}'
+      body_format: json
+      headers:
+        Content-Type: "application/json"
+        user-agent : "chatops"
+        X-Chatops-Source-Id: "{{ sourceId }}"
+        X-Chatops-Source-Api-Token: "{{ apiToken }}"
+        X-Transaction-Id: "postmessage101"
+        dest-id: "chatop"
