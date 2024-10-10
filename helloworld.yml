@@ -17,7 +17,7 @@
         X-Chatops-Source-Api-Token: "{{ apiToken }}"
         X-Transaction-Id: "postmessage101"
         dest-id: "chatop"
-        
+        User-Agent : "servicenow"
   - name: Make sure service has time to start or stop
     pause:
       seconds: 3
@@ -35,3 +35,4 @@
         X-Chatops-Source-Api-Token: "{{ apiToken }}"
         X-Transaction-Id: "postmessage101"
         dest-id: "chatop"
+        User-Agent : "servicenow"
