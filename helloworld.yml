@@ -6,10 +6,10 @@
   # shell: curl -k "https://{{ url }}/api/v2/postMessage" --header 'Content-Type: application/json' --header 'X-Chatops-Source-Id: "{{ sourceId }}"' --header 'X-Chatops-Source-Api-Token: "{{ apiToken }}"' --header 'X-Transaction-Id: postmessage101' --data-raw '{ "workspaceName": "'"{{ workspaceName }}"'", "message": {"text":"'"{{ message }}"'"},"channelId": "'"{{ channelId }}"'"}'
   # shell: echo "Analysing ssl certs"
   
-  - name: Analysing
+  - name: Analysing ssl certs
     shell: echo "Analysing ssl certs."
     
-  - name: post to chatops
+  - name: notifying from chatops
     uri:
       url: https://{{ url }}/api/v2/postMessage
       method: POST
@@ -23,15 +23,15 @@
         X-Transaction-Id: "postmessage101"
         dest-id: "chatop"
         User-Agent : "servicenow"
-  - name: Make sure service has time to start or stop
+  - name: still analysing
     pause:
       seconds: 3
       
-  - name: successfull
+  - name: ssl certs upgrade successfull
     shell: echo "ssl certs upgrade successfull."
     
   # shell: echo "ssl certs upgrade successfull."  
-  - name: post to chatops2
+  - name: notifying from chatops
     uri:
       url: https://{{ url }}/api/v2/postMessage
       method: POST
