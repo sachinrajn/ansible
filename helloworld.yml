@@ -5,6 +5,10 @@
   tasks:
   # shell: curl -k "https://{{ url }}/api/v2/postMessage" --header 'Content-Type: application/json' --header 'X-Chatops-Source-Id: "{{ sourceId }}"' --header 'X-Chatops-Source-Api-Token: "{{ apiToken }}"' --header 'X-Transaction-Id: postmessage101' --data-raw '{ "workspaceName": "'"{{ workspaceName }}"'", "message": {"text":"'"{{ message }}"'"},"channelId": "'"{{ channelId }}"'"}'
   # shell: echo "Analysing ssl certs"
+  
+  - name: Analysing
+    shell: echo "Analysing ssl certs."
+    
   - name: post to chatops
     uri:
       url: https://{{ url }}/api/v2/postMessage
@@ -23,6 +27,9 @@
     pause:
       seconds: 3
       
+  - name: successfull
+    shell: echo "ssl certs upgrade successfull."
+    
   # shell: echo "ssl certs upgrade successfull."  
   - name: post to chatops2
     uri:
