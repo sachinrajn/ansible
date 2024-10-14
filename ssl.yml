@@ -23,6 +23,26 @@
         X-Transaction-Id: "postmessage101"
         dest-id: "chatop"
         User-Agent : "servicenow"
+        
+  - name: still analysing
+    pause:
+      seconds: 3
+      
+  - name: found certs
+    uri:
+      url: https://{{ url }}/api/v2/postMessage
+      method: POST
+      body: '{"message":{"text":"{{ message1 }}"},"channelId": "{{ channelId }}","collabPlatform": "TEAMS","workspaceName": "{{ workspaceName }}"}'
+      body_format: json
+      headers:
+        Content-Type: "application/json"
+        user-agent : "chatops"
+        X-Chatops-Source-Id: "{{ sourceId }}"
+        X-Chatops-Source-Api-Token: "{{ apiToken }}"
+        X-Transaction-Id: "postmessage101"
+        dest-id: "chatop"
+        User-Agent : "servicenow"
+  
   - name: still analysing
     pause:
       seconds: 3
@@ -35,7 +55,7 @@
     uri:
       url: https://{{ url }}/api/v2/postMessage
       method: POST
-      body: '{"message":{"text":"{{ message1 }}"},"channelId": "{{ channelId }}","collabPlatform": "TEAMS","workspaceName": "{{ workspaceName }}"}'
+      body: '{"message":{"text":"{{ message2 }}"},"channelId": "{{ channelId }}","collabPlatform": "TEAMS","workspaceName": "{{ workspaceName }}"}'
       body_format: json
       headers:
         Content-Type: "application/json"
